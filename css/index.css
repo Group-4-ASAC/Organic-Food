@@ -1,44 +1,173 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+}
+header {
+  background-color: #e65059;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 30px;
+  position: fixed;
+  width: 100%;
+
+  z-index: 2;
+}
+header h1 {
+  font-size: 40px;
+  color: #480731;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+}
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+header div ul {
+  display: flex;
+  font-size: 25px;
+}
+header div ul li {
+  padding: 20px;
+}
+header div ul li a {
+  color: #f5f7d0;
+  text-decoration: none;
 }
 
-img{
-    height: 200px;
-    width: 150px;
-        
+.main-baner {
+  height: 600px;
+  background: url('../img/mediterranean-cuisine-eat-cooking-book-cover-food.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.main-baner div {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 70%;
+  background: rgba(255, 255, 255, 0.4);
+  width: 40%;
+  height: 150px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-baner div h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #480731;
+  font-family: 'Berkshire Swash', cursive;
+}
+.main-baner div h3 {
+  font-size: 30px;
 }
 
-#first , #second{
-    clear: both;
-    padding: 20px;
-    margin: auto;
-    width: 33.33%;
+#organic-product {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+#first,
+#second {
+  clear: both;
+  padding: 20px;
+  margin: auto;
+  width: 33.33%;
+}
+#sample-of-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#button {
+  border-radius: 10px;
+  margin: 0 auto;
+  /* padding: 2px 30px; */
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #e65059;
+  font-size: 20px;
+  border: solid 2px #e65059;
+  transition: all 0.3s ease;
 }
 
-
-#button{
-    border-radius: 10px;
-    margin-left: 46% ;
-    padding: 2px 30px;
-        
+#button:hover {
+  background-color: #e65059;
+  color: white;
 }
 
-#button a{
-text-decoration: none;
-color: black;
-font-size: bold;
-
+#organic-product p {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+  color: #480731;
 }
-#button:hover{
-background-color: black;
-
+#organic-product .line {
+  width: 300px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #e65059;
 }
-#button a:hover{
-    color: white;
+#organic-product .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#organic-product #first img,
+#organic-product #second img {
+  width: 200px;
+  margin: 40px;
+  margin-top: 10px;
+  height: 200px;
+  object-fit: contain;
+}
+#organic-product #first,
+#organic-product #second {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-evenly;
+}
+#organic-product #first div,
+#organic-product #second div {
+  background-color: #fff;
+  height: 400px;
+  width: 300px;
+  margin-right: 20px;
+  border-radius: 30px;
+}
+#organic-product #first div P,
+#organic-product #second div P {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-#organic-product p{
-    font-weight: bold;
-    font-size: 25px;
-    text-align: center;
+#secondBanner {
+  background: url('https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixid=MnwxMjA3fDB8MHxwaG90[…]GVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  margin-top: 40px;
+  position: relative;
+}
+#secondBanner div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  text-align: center;
+}
+#secondBanner div p {
+  margin-bottom: 20px;
 }
