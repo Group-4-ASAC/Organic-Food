@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+img{
+    height: 200px;
+    width: 150px;
+    
+}
+#first{
+    clear: both;
+    padding: 20px;
+
+}
+#second{
+    clear: both;
+    padding: 20px;
+
+}
+
+#button a{
+text-decoration: none;
+color: black;
+}
+#button :hover{
+    color: darkgreen;
+}
