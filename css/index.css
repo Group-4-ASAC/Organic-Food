@@ -171,3 +171,91 @@ header div ul li a {
 #secondBanner div p {
   margin-bottom: 20px;
 }
+
+footer
+{
+  background-color: #333;
+  color: white;
+  padding: 40px; 
+  padding-bottom: 0;
+  font-size: 20px;
+  margin-top: 20px;
+ 
+
+
+}
+  
+.quick-links-footer li a
+{
+  color: white;
+  font-size: 25px;
+
+}
+#containing
+{
+  display: flex;
+  justify-content:space-between;
+}
+
+a 
+{
+  text-decoration: none !important;
+}
+
+footer h4
+{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.social-media-footer a
+{
+  color: white;
+}
+footer li
+{
+  margin-bottom: 10px;
+}
+.rights
+{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  height:50px;
+}
+
+.rights ul
+{
+  display: flex;
+  margin-left: 20px;
+align-items: center;
+}
+.rights ul li
+{
+  margin-left: 15px;
+  font-size: 40px;
+}
+.rights p
+{
+  margin-bottom: 10px;
+}
+.footer-logo
+{
+  position: relative ;
+  bottom: 50px;
+  right: 30px;
+  
+}
+.footer-logo img
+{
+  height: 300px;
+}
+.quick-links-footer
+{
+  margin-right: 200px;
+}
+footer div
+{
+  height: 250px;
+}
