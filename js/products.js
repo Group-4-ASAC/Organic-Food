@@ -19,7 +19,7 @@ let apple= new Products('apple','https://cdn.pixabay.com/photo/2017/09/26/13/21/
 
 
 
-let form =document.getElementById("inputForm");
+let form = document.getElementById("inputForm");
 form.addEventListener('submit', submitter);
 function submitter(event){
     event.preventDefault();
@@ -28,10 +28,15 @@ function submitter(event){
     let link = event.target.link.value;
     let price = event.target.price.value;
     let description = event.target.description.value;
-   ulElement.textContent='';
-   let newProduct= new Products(name, link, price, description);
-   newProduct.render();
-   dataStorage();    
+    
+    let newProduct= new Products(name, link, price, description);
+    ulElement.textContent="";
+        for(let j=0; j<allProducts.length;j++)
+    {
+        allProducts[j].render();
+        console.log("helko");
+    }
+    dataStorage();    
 }
 
 
@@ -40,7 +45,7 @@ Products.prototype.render = function () {
     let parent = document.getElementById('parent');
      ulElement = document.createElement('ul');
     parent.appendChild(ulElement);
-    for (let i = 0; i < allProducts.length; i++) {
+   
         let liElement = document.createElement('li');
         ulElement.appendChild(liElement);
        
@@ -52,30 +57,50 @@ Products.prototype.render = function () {
         liElement.appendChild(nameElement);
         liElement.appendChild(priceElement);
         liElement.appendChild(descElement);
-        imgElemnt.src=allProducts[i].link;
-       nameElement.textContent=allProducts[i].name;
-       priceElement.textContent=allProducts[i].price;
-       descElement.textContent=allProducts[i].description;
+        imgElemnt.src=this.link;
+       nameElement.textContent=this.name;
+       priceElement.textContent=this.price;
+       descElement.textContent=this.description;
        
-        }
+        
               
 }
-apple.render();
+apple.render(); 
 let dataArr=[];
 function dataStorage(){
 let dataArr = JSON.stringify(allProducts);
 localStorage.setItem('product',dataArr);
 }
 
-function getDataStorage(){
+function getDataStorage()
+{
     let data=localStorage.getItem('product');
     let productData=JSON.parse(data);
-    if (productData!==null){
-        allProducts=productData;
+    if (productData!==null)
+    {
+      let prod;
+        //reinstantiation
+        allProducts=[];
+        for(let i=0; i<productData.length; i++)
+        {
+          prod = new Products(productData[i].name,productData[i].link,productData[i].price,productData[i].description); 
+        }
+        ulElement.textContent='';
+       // allProducts[0].render();
+        console.log(allProducts[0]);
+        for(let j=0; j<allProducts.length;j++)
+        {
+            allProducts[j].render();
+            console.log("helko");
+        }
+        console.log(prod);
+        console.log(allProducts);
+      //  allProducts=productData;
+         
+        // console.log(productData.length);
+        // console.log(allProducts);
     }
-    
 }
-
 getDataStorage(); 
 
 
