@@ -14,6 +14,7 @@ function Products(name, link, price, description) {
     allProducts.push(this);
 }
 
+
 let apple= new Products('apple','https://cdn.pixabay.com/photo/2017/09/26/13/21/apple-2788599__340.jpg',12,'vitminC');
 
 
@@ -30,10 +31,12 @@ function submitter(event){
    ulElement.textContent='';
    let newProduct= new Products(name, link, price, description);
    newProduct.render();
+   dataStorage();    
 }
 
 
 Products.prototype.render = function () {
+    
     let parent = document.getElementById('parent');
      ulElement = document.createElement('ul');
     parent.appendChild(ulElement);
@@ -53,8 +56,26 @@ Products.prototype.render = function () {
        nameElement.textContent=allProducts[i].name;
        priceElement.textContent=allProducts[i].price;
        descElement.textContent=allProducts[i].description;
-
+       
         }
-
+              
 }
 apple.render();
+let dataArr=[];
+function dataStorage(){
+let dataArr = JSON.stringify(allProducts);
+localStorage.setItem('product',dataArr);
+}
+
+function getDataStorage(){
+    let data=localStorage.getItem('product');
+    let productData=JSON.parse(data);
+    if (productData!==null){
+        allProducts=productData;
+    }
+    
+}
+
+getDataStorage(); 
+
+
