@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 let allProducts = [];
 
@@ -23,8 +23,8 @@ let parent2 = document.getElementById('parent');
 let ulElement = document.createElement('ul');
 parent2.appendChild(ulElement);
 
-let form = document.getElementById('inputForm');
-form.addEventListener('submit', submitter);
+let form = document.getElementById("inputForm");
+form.addEventListener("submit", submitter);
 function submitter(event) {
   event.preventDefault();
 
