@@ -90,7 +90,7 @@ function getDataStorage()
         console.log(allProducts[0]);
         for(let j=0; j<allProducts.length;j++)
         {
-            allProducts[j].render();
+        allProducts[j].render();
             console.log("helko");
         }
         console.log(prod);
