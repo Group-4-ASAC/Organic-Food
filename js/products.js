@@ -1,6 +1,8 @@
 'use strict';
 
 let allProducts = [];
+let ulElement;
+
 
 function Products(name, link, price, description) {
     this.name = name;
@@ -12,11 +14,28 @@ function Products(name, link, price, description) {
     allProducts.push(this);
 }
 
-let apple= new Products('apple','orange',12,'vitminC');
+let apple= new Products('apple','https://cdn.pixabay.com/photo/2017/09/26/13/21/apple-2788599__340.jpg',12,'vitminC');
+
+
+
+let form =document.getElementById("inputForm");
+form.addEventListener('submit', submitter);
+function submitter(event){
+    event.preventDefault();
+
+    let name = event.target.name.value;
+    let link = event.target.link.value;
+    let price = event.target.price.value;
+    let description = event.target.description.value;
+   ulElement.textContent='';
+   let newProduct= new Products(name, link, price, description);
+   newProduct.render();
+}
+
 
 Products.prototype.render = function () {
     let parent = document.getElementById('parent');
-    let ulElement = document.createElement('ul');
+     ulElement = document.createElement('ul');
     parent.appendChild(ulElement);
     for (let i = 0; i < allProducts.length; i++) {
         let liElement = document.createElement('li');
