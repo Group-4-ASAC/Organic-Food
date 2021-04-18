@@ -13,7 +13,6 @@ header {
   padding: 30px;
   position: sticky;
   top: 0;
-  
 
   z-index: 2;
 }
@@ -34,11 +33,27 @@ header div ul {
 header div ul li {
   padding: 20px;
 }
+
 header div ul li a {
   color: #f5f7d0;
   text-decoration: none;
 }
-
+header div ul li::after {
+  transition: background-color 2s ease;
+  content: '';
+  width: 0%;
+  height: 2px;
+}
+header div ul .active-page::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #e29398;
+  display: block;
+  position: relative;
+  top: 10px;
+  transition: all 2s ease;
+}
 .main-baner {
   height: 600px;
   background: url('../img/mediterranean-cuisine-eat-cooking-book-cover-food.jpg');
@@ -173,90 +188,70 @@ header div ul li a {
   margin-bottom: 20px;
 }
 
-footer
-{
+footer {
   background-color: #333;
   color: white;
-  padding: 40px; 
+  padding: 40px;
   padding-bottom: 0;
   font-size: 20px;
   margin-top: 20px;
- 
-
-
 }
-  
-.quick-links-footer li a
-{
+
+.quick-links-footer li a {
   color: white;
   font-size: 25px;
-
 }
-#containing
-{
+#containing {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
-a 
-{
+a {
   text-decoration: none !important;
 }
 
-footer h4
-{
+footer h4 {
   font-size: 30px;
   margin-bottom: 20px;
 }
-.social-media-footer a
-{
+.social-media-footer a {
   color: white;
 }
-footer li
-{
+footer li {
   margin-bottom: 10px;
 }
-.rights
-{
+.rights {
   justify-content: center;
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  height:50px;
+  height: 50px;
 }
 
-.rights ul
-{
+.rights ul {
   display: flex;
   margin-left: 20px;
-align-items: center;
+  align-items: center;
 }
-.rights ul li
-{
+.rights ul li {
   margin-left: 15px;
   font-size: 40px;
 }
-.rights p
-{
+.rights p {
   margin-bottom: 10px;
 }
-.footer-logo
-{
-  position: relative ;
+.footer-logo {
+  position: relative;
   bottom: 50px;
   right: 30px;
-  
 }
-.footer-logo img
-{
+.footer-logo img {
   height: 300px;
 }
-.quick-links-footer
-{
+.quick-links-footer {
   margin-right: 200px;
 }
-footer div
-{
+footer div {
   height: 250px;
 }
