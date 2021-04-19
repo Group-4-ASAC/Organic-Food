@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+#hero-image{
+    height: 600px;
+    background: url('https://c1.wallpaperflare.com/preview/900/231/751/tomato-pepper-onion-mushroom.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+ 
+#hero-image form{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);    
+    left: 60%;
+    background: rgba(255, 255, 255, 0.4);
+    height: 350px;
+    width: 400px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  
+}
+
+#hero-image #title{
+    font-weight: bold;
+    color: #480731;
+    font-size: 30px;
+    font-family: 'Nova Mono', monospace;
+}
+
+#hero-image label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#hero-image #button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  margin: 0 auto;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #e65059;
+  font-size: 20px;
+  border: solid 2px #e65059;
+  transition: all 0.3s ease;
+}
+
+#hero-image #button:hover {
+    background-color: #e65059;
+    color: white;
+  }
