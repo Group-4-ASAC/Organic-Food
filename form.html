@@ -7,6 +7,7 @@
     <title>Form page</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/form.css">
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -26,6 +27,8 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -37,6 +40,9 @@
             <li id="products-header"><a href="products.html">Products</a></li>
   
             <li id="about-us-header"><a href="about-us.html">About Us</a></li>
+            <li id="add-product"> 
+              <a href="form.html"> Add Products</a>
+            </li>
             <li>
               <a href="cart.html">
                 <i class="fas fa-cart-plus"> </i><sub id="cart-number"></sub
@@ -60,20 +66,33 @@
         </div>
       </header>
     <main>
-        <form action="" id="inputForm">
-            <fieldset>
-              <legend>Adding new product</legend>
-              <label for="name">Name :</label>
-              <input type="text" id="name" name="name" required />
-              <label for="link">Image Link :</label>
-              <input type="text" id="link" name="link" required />
-              <label for="price">Price :</label>
-              <input type="number" id="price" name="price" required step="any" />
-              <label for="description"> Description :</label>
-              <input type="text" id="description" name="description" required />
-              <input type="submit" value="Add product" />
-            </fieldset>
-          </form>
+        <div id="hero-image">
+            <form action="" id="inputForm">
+                <fieldset>
+                  <legend id="title">Adding new product</legend>
+                  <br>
+                  <br>
+                  <label for="name">Name :</label>
+                  <input type="text" id="name" name="name" required />
+                  <br>
+                  <br>
+                  <label for="link">Image Link :</label>
+                  <input type="text" id="link" name="link" required />
+                  <br>
+                  <br>
+                  <label for="price">Price :</label>
+                  <input type="number" id="price" name="price" required step="any" />
+                  <br>
+                  <br>
+                  <label for="description"> Description :</label>
+                  <input type="text" id="description" name="description" required />
+                  <br>
+                  <br>
+                  <input type="submit" value="Add product" id="button"/>
+                </fieldset>
+              </form>
+        </div>
+       
     </main>
     <footer>
         <div id="containing">
@@ -123,5 +142,6 @@
         </div>
       </footer>
       <script src="js/form.js"></script>
+      <script src="js/header.js"></script>
 </body>
 </html>

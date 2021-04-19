@@ -1,4 +1,5 @@
 "use strict";
+
 // alert('hello');
 let table = document.getElementById("table");
 let addedToCart = [];
@@ -84,4 +85,5 @@ for (let i = 0; i < addedToCart.length; i++) {
   addedToCart[i].render();
 }
 console.log(addedToCart);
+
 
