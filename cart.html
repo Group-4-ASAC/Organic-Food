@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cart</title>
-    <link rel="stylesheet" href="">
-</head>
-<body>
+    <link rel="stylesheet" href="css/reset.css" />
+
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Organic Food</h1>
-        <div>
-          <ul id="header-pages">
-            <li id="index-header"><a href="index.html">Home </a></li>
-  
-            <li id="products-header"><a href="products.html">Products</a></li>
-  
-            <li id="about-us-header"><a href="about-us.html">About Us</a></li>
-            <li id="add-product"> 
-              <a href="form.html"> Add Products</a>
-            </li>
-            <li>
-              <a href="cart.html">
-                <i class="fas fa-cart-plus"> </i><sub id="cart-number"></sub
-              ></a>
-            </li>
-          </ul>
-  
-          <ul>
-            <li>
-              <a href=""><i class="fab fa-facebook"></i></a>
-            </li>
-  
-            <li>
-              <a href=""><i class="fab fa-instagram"></i></a>
-            </li>
-  
-            <li>
-              <a href=""><i class="fab fa-twitter"></i></a>
-            </li>
-          </ul>
-        </div>
-      </header>
-      <main>
-    <form action="" id="formCart">
-        <!-- <fieldset> -->
-            <!-- <label for="quantity">quantity</label> -->
-            <!-- <input type="number " id="quantity" name="quantity">
-            <input type="submit" id="submit" value="submit"> -->
+      <h1>Organic Food</h1>
+      <div>
+        <ul id="header-pages">
+          <li id="index-header"><a href="index.html">Home </a></li>
 
-        <!-- </fieldset> -->
-</form>
+          <li id="products-header"><a href="products.html">Products</a></li>
 
-<table id='table'>
+          <li id="about-us-header"><a href="about-us.html">About Us</a></li>
+          <li id="add-product">
+            <a href="form.html"> Add Products</a>
+          </li>
+          <li>
+            <a href="cart.html">
+              <i class="fas fa-cart-plus"> </i><sub id="cart-number"></sub
+            ></a>
+          </li>
+        </ul>
 
-</table>
-    
-    <div id="parent"></div>
-</main>
+        <ul>
+          <li>
+            <a href=""><i class="fab fa-facebook"></i></a>
+          </li>
 
-<footer>
-    <div id="containing">
+          <li>
+            <a href=""><i class="fab fa-instagram"></i></a>
+          </li>
+
+          <li>
+            <a href=""><i class="fab fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <table id="table"></table>
+
+      <div ><button id="clearing-button"> clear storage </button> </div>
+      
+      <div id="totalsing"></div>
+    </main>
+
+    <footer>
+      <div id="containing">
         <div class="footer-logo">
           <img
             src="img/Fresh-Organic-Food-Logo-Vector-removebg-preview.png"
@@ -105,8 +118,7 @@
           <li><i class="fab fa-cc-paypal"></i></li>
         </ul>
       </div>
-</footer>
-</body>
-<script src="js/cart2.js"></script>
-<script src="js/cart.js"></script>
+    </footer>
+  </body>
+  <script src="js/cart2.js"></script>
 </html>
