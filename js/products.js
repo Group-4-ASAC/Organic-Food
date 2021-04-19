@@ -93,7 +93,7 @@ function getDataStorage() {
   let userData = localStorage.getItem('userProduct');
   let productData = JSON.parse(data);
   let userProductData = JSON.parse(userData);
-  console.log(userProductData.concat(productData));
+  // console.log(userProductData.concat(productData));
   let compArr = productData.concat(userProductData);
   if (compArr !== null) {
     allProducts = compArr;
@@ -132,6 +132,7 @@ function AddToCart(link, name, price, description) {
   addToCartArr.push(this);
 }
 getCartStorage();
+let sup = document.getElementById('cart-number');
 function addToCartHandler(event) {
   //   console.log(event.target.parentNode.children.length);
   console.log(event.target.parentNode.children);
@@ -144,6 +145,7 @@ function addToCartHandler(event) {
   );
 
   localStorage.setItem('userCart', JSON.stringify(addToCartArr));
+  sup.textContent = addToCartArr.length;
   event.target.removeEventListener('click', addToCartHandler);
 }
 
@@ -159,7 +161,7 @@ function getCartStorage() {
         cartData[i].description
       );
     }
-    let sup = document.getElementById('cart-number');
+
     sup.textContent = addToCartArr.length;
   }
 }
