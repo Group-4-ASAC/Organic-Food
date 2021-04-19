@@ -23,25 +23,7 @@ let parent2 = document.getElementById("parent");
 let ulElement = document.createElement("ul");
 parent2.appendChild(ulElement);
 
-let form = document.getElementById("inputForm");
-form.addEventListener("submit", submitter);
-function submitter(event) {
-  event.preventDefault();
-
-  let name = event.target.name.value;
-  let link = event.target.link.value;
-  let price = event.target.price.value;
-  let description = event.target.description.value;
-  console.log(allProducts);
-  let prod = new Products(name, link, price, description);
-  // ulElement.textContent = '';
-  // for (let j = 0; j < allProducts.length; j++) {
-  //     allProducts[j].render();
-  //     console.log('helko');
-  // }
-  dataStorage();
-  prod.render();
-}
+dataStorage();
 // let ulElement = document.createElement('ul');
 // let parent = document.getElementById('parent');
 Products.prototype.render = function () {
@@ -72,23 +54,32 @@ apple.render();
 function dataStorage() {
   let dataArr = JSON.stringify(allProducts);
   localStorage.setItem("product", dataArr);
+  
 }
 
 function getDataStorage() {
   let data = localStorage.getItem("product");
+  let userData=localStorage.getItem("userProduct");
   let productData = JSON.parse(data);
-  if (productData !== null) {
-    allProducts = productData;
+  let userProductData=JSON.parse(userData);
+  console.log(userProductData.concat(productData));
+  let compArr=productData.concat(userProductData);
+  if (compArr !== null) {
+    allProducts = compArr;
+    
     //reinstantiation
     ulElement.textContent = "";
     allProducts = [];
-    for (let i = 0; i < productData.length; i++) {
+    for (let i = 0; i < compArr.length; i++) {
+     if (compArr[i]!==null){
       new Products(
-        productData[i].name,
-        productData[i].link,
-        productData[i].price,
-        productData[i].description
+        compArr[i].name,
+        compArr[i].link,
+        compArr[i].price,
+        compArr[i].description
       );
+     }
+      
     }
     // allProducts = [];
     // ulElement.textContent = '';
@@ -114,7 +105,7 @@ getCartStorage();
 function addToCartHandler(event) {
   //   console.log(event.target.parentNode.children.length);
   console.log(event.target.parentNode.children);
-
+  
   new AddToCart(
     event.target.parentNode.children[0].src,
     event.target.parentNode.children[1].textContent,
@@ -123,6 +114,7 @@ function addToCartHandler(event) {
   );
 
   localStorage.setItem("userCart", JSON.stringify(addToCartArr));
+  event.target.removeEventListener("click", addToCartHandler);
 }
 
 function getCartStorage() {
@@ -140,4 +132,5 @@ function getCartStorage() {
     let sup = document.getElementById("cart-number");
     sup.textContent = addToCartArr.length;
   }
+
 }
