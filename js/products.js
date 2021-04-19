@@ -12,11 +12,40 @@ function Products(name, link, price, description) {
   allProducts.push(this);
 }
 
-let apple = new Products(
+//instances
+new Products(
   'apple',
   'https://cdn.pixabay.com/photo/2017/09/26/13/21/apple-2788599__340.jpg',
   12,
   'vitminC'
+);
+
+new Products(
+  'cherry',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxv4U_3l1CBP8hNnA4bGW9RYYfWv_w96nNx5v3dXQCMX65EpEH1siE_BGTq2qsFsc48wY&usqp=CAU',
+  14,
+  'Rich in antioxidants and anti-inflammatory compounds'
+);
+
+new Products(
+  'strawberries',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbXxACrMh6M1WdAWGafGW3Gh7LF-yI2PwHA&usqp=CAU',
+  9,
+  'Packed with vitamins, fiber, and particularly high levels of antioxidants'
+);
+
+new Products(
+  'tomatoes',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0fqOgYnXJJvThlurHhzx6VipJY-Kt_ttWw&usqp=CAU',
+  2.6,
+  'great source of vitamin C, potassium, folate, and vitamin K'
+);
+
+new Products(
+  'Carrots',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-MHZ36V6r2Tg96JJes8s582TFHO63mdmTpg&usqp=CAU',
+  71,
+  'good source of beta carotene, fiber, vitamin K1, potassium, and antioxidants'
 );
 
 let parent2 = document.getElementById('parent');
@@ -50,7 +79,10 @@ Products.prototype.render = function () {
   descElement.textContent = this.description;
 };
 
-apple.render();
+//apple.render();
+for (let i = 0; i < allProducts.length; i++) {
+  allProducts[i].render();
+}
 function dataStorage() {
   let dataArr = JSON.stringify(allProducts);
   localStorage.setItem('product', dataArr);
