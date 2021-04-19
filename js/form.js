@@ -29,6 +29,7 @@ function submitter(event) {
     //     console.log('helko');
     // }
     dataStorage();
+    alert('Great, Your product is added.')
 
 }
 function dataStorage() {
