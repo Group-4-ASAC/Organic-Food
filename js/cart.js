@@ -50,12 +50,7 @@ function quntitiySub(event) {
   event.preventDefault();
   let quntityProduct = event.target.userAdded.value;
   console.log(event.target.userAdded.value);
-  // if (quntityProduct) {
-  //   quntityProduct=1
-    // console.log(quntityProduct);
-  // }else{
-  //   quntityProduct = event.target.userAdded.value;
-  // }
+    quntityProduct = event.target.userAdded.value;
   for (let i = 0; i < addedToCart.length; i++) {
 
     // totalCount = 0;
@@ -68,13 +63,14 @@ function quntitiySub(event) {
     
     totalPrice = totalPrice+(addedToCart[i].price * quntityProduct);
   }
-
   console.log(totalPrice);
-
-
+  
+  
   liunorder2.textContent = `Item's Total Price: ${totalPrice}`;
-
 }
+
+
+
 
 
 
