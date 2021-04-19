@@ -1,5 +1,10 @@
 'use strict';
+
 let addedToCart = [];
+let totalPrice = 0;
+let totalCount = 0;
+
+let divElement = document.getElementById('parent');
 
 function getAdded() {
   let added = localStorage.getItem('userCart');
@@ -10,10 +15,8 @@ function getAdded() {
 }
 getAdded();
 
-let totalPrice = 0;
-let totalCount = 0;
-
 console.log(addedToCart);
+
 for (let j = 0; j < addedToCart.length; j++) {
   let parent = document.getElementById('formCart');
   let labelElement = document.createElement('label');
@@ -30,16 +33,46 @@ for (let j = 0; j < addedToCart.length; j++) {
   parent.appendChild(submitInput);
 
   formCart.addEventListener('submit', quntitiySub);
-  function quntitiySub(event) {
-    event.preventDefault();
-    let quntityProduct = event.target.userAdded.value;
-    // console.log(quntityProduct);
-    for (let i = 0; i < addedToCart.length; i++) {
-      totalCount = 0;
-      totalCount = totalCount + quntityProduct;
-      totalPrice += addedToCart[i].price * quntityProduct;
-      console.log(totalCount);
-      console.log(totalPrice);
-    }
+
+  // renderAddedtoCart();
+}
+
+function quntitiySub(event) {
+  event.preventDefault();
+  let quntityProduct = event.target.userAdded.value;
+  // console.log(quntityProduct);
+  for (let i = 0; i < addedToCart.length; i++) {
+    totalCount = 0;
+    totalCount = totalCount + quntityProduct;
+    totalPrice += addedToCart[i].price * quntityProduct;
+    console.log(totalCount);
+    console.log(totalPrice);
+
+    localStorage.setItem('totalprice', totalPrice);
   }
 }
+
+let liunorder2 = document.createElement('li');
+
+function renderAddedtoCart() {
+  let unorder = document.createElement('ul');
+
+  divElement.appendChild(unorder);
+
+  for (let i = 0; i < addedToCart.length; i++) {
+    let liunorder = document.createElement('li');
+
+    unorder.appendChild(liunorder);
+
+    liunorder.textContent = `${addedToCart[i].name}And Item Price ${addedToCart[i].price}`;
+
+    let imgElement = document.createElement('img');
+    liunorder.appendChild(imgElement);
+    imgElement.src = addedToCart[i].link;
+
+    unorder.appendChild(liunorder2);
+    liunorder2.textConten = `Item's Total Price: ${totalPrice}`;
+  }
+}
+renderAddedtoCart();
+// renderAddedtoCart();
