@@ -5,25 +5,25 @@ let addProducts = document.getElementById('add-product');
 
 console.log(window.location.pathname);
 
-if (window.location.pathname === '/about-us.html') {
+if (window.location.pathname === '/Organic-Food/about-us.html') {
   aboutUs.classList.add('active-page');
   products.classList.remove('active-page');
   index.classList.remove('active-page');
   addProducts.classList.remove('active-page');
 } else if (
-  window.location.pathname === '/index.html' ||
-  window.location.pathname === '/'
+  window.location.pathname === '/Organic-Food/index.html' ||
+  window.location.pathname === '/Organic-Food'
 ) {
   index.classList.add('active-page');
   products.classList.remove('active-page');
   aboutUs.classList.remove('active-page');
   addProducts.classList.remove('active-page');
-} else if (window.location.pathname === '/products.html') {
+} else if (window.location.pathname === '/Organic-Food/products.html') {
   products.classList.add('active-page');
   index.classList.remove('active-page');
   aboutUs.classList.remove('active-page');
   addProducts.classList.remove('active-page');
-} else if (window.location.pathname === '/form.html') {
+} else if (window.location.pathname === '/Organic-Food/form.html') {
   products.classList.remove('active-page');
   index.classList.remove('active-page');
   aboutUs.classList.remove('active-page');

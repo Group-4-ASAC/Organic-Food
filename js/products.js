@@ -15,7 +15,7 @@ function Products(name, link, price, description) {
 //instances
 new Products(
   'Apple',
-  'https:images.unsplash.com/photo-1589217157232-464b505b197f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+  'https://cdn.pixabay.com/photo/2017/09/26/13/31/apple-2788616_1280.jpg',
   4,
   'Apples contain compounds that may help protect your stomach lining from injury due to NSAID painkillers.'
 );
