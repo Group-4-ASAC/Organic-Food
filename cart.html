@@ -47,7 +47,6 @@
               <i class="fas fa-cart-plus"> </i><sub id="cart-number"></sub
             ></a>
           </li>
-
         </ul>
 
         <ul>
@@ -66,13 +65,19 @@
       </div>
     </header>
     <main>
-      
       <table id="table"></table>
+      <div id="empty"></div>
       <div id="merging">
-      <div ><button id="clearing-button"> clear storage </button> </div>
-      
-      <div id="totalsing"></div>
-    </div>
+        <div class="total-prices">
+          The Total Price is:
+          <span id="totalsing"></span>
+        </div>
+        <div>
+          <button id="clearing-button">
+            Checkout <i class="fas fa-cart-plus"> </i>
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -89,7 +94,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="about-us.html">About Us</a></li>
-            <li> <a href="form.html"> Add Products</a></li>
+            <li><a href="form.html"> Add Products</a></li>
             <li><a href="cart.html">Cart</a></li>
           </ul>
         </div>
@@ -124,8 +129,11 @@
       </div>
     </footer>
   </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/cart.js"></script>
-  <script src="js/header.js">
-
-  </script>
+  <<<<<<< HEAD
+  <script src="js/header.js"></script>
+  =======
+  <script src="js/header.js"></script>
+  >>>>>>> 9a52c930524fa849b5e944fb500f7449cac05a48
 </html>

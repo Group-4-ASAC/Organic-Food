@@ -44,65 +44,62 @@ new Products(
 new Products(
   'Carrots',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-MHZ36V6r2Tg96JJes8s582TFHO63mdmTpg&usqp=CAU',
-  1.50,
+  1.5,
   'good source of beta carotene, fiber, vitamin K1, potassium, and antioxidants'
 );
 new Products(
   'Orange',
   'https://cdn.pixabay.com/photo/2017/01/20/15/06/oranges-1995056_960_720.jpg',
-  5 ,
-  'High in Vitamin C. Oranges are an excellent source of vitamin C.',
-  );
+  5,
+  'High in Vitamin C. Oranges are an excellent source of vitamin C.'
+);
 
-  new Products(
-    'Dragon fruit',
-    'https://cdn.pixabay.com/photo/2017/07/06/10/01/fruit-2477515_960_720.jpg',
-    15 ,
-    'Its rich in antioxidants like flavonoids, phenolic acid',
- 
-    );
+new Products(
+  'Dragon fruit',
+  'https://cdn.pixabay.com/photo/2017/07/06/10/01/fruit-2477515_960_720.jpg',
+  15,
+  'Its rich in antioxidants like flavonoids, phenolic acid'
+);
 
-    new Products(
-      'Coconut' ,
-      'https://cdn.pixabay.com/photo/2017/08/24/06/29/coconut-2675546_960_720.jpg',
-      10,
-      'Rich in fiber and MCTs, it may offer a number of benefits, including improved heart health'
-      );
-      
-  new Products(
-    'Coconut Oil',
-    'https://cdn.pixabay.com/photo/2018/01/05/04/44/food-3062139_960_720.jpg',
-    6.50,
-    'Contains healthy fatty acids'
-    );
-    new Products(
-      'Organic Eggs',
-      'https://cdn.pixabay.com/photo/2018/03/11/18/34/brown-eggs-3217675_960_720.jpg',
-     3.50,
-     ' Organic eggs have higher levels of omega-3 fatty acids than non-organic eggs. '
-     );
-     new Products(
-     'Almond milk',
-     'https://cdn.pixabay.com/photo/2020/06/19/06/41/almond-5315905_960_720.jpg',
-     5.50,
-     'High in Vitamin E'
-     );
+new Products(
+  'Coconut',
+  'https://cdn.pixabay.com/photo/2017/08/24/06/29/coconut-2675546_960_720.jpg',
+  10,
+  'Rich in fiber and MCTs, it may offer a number of benefits, including improved heart health'
+);
 
-     new Products(
-       'Avocado',
-      'img/avocado-cut-stone-leaves-white-background-wallpaper-preview.jpg',
-      4.99,
-      'Avocado is a green, pear-shaped fruit often called an “alligator pear.” It is loaded with healthy fats'
-      
-     );
+new Products(
+  'Coconut Oil',
+  'https://cdn.pixabay.com/photo/2018/01/05/04/44/food-3062139_960_720.jpg',
+  6.5,
+  'Contains healthy fatty acids'
+);
+new Products(
+  'Organic Eggs',
+  'https://cdn.pixabay.com/photo/2018/03/11/18/34/brown-eggs-3217675_960_720.jpg',
+  3.5,
+  ' Organic eggs have higher levels of omega-3 fatty acids than non-organic eggs. '
+);
+new Products(
+  'Almond milk',
+  'https://cdn.pixabay.com/photo/2020/06/19/06/41/almond-5315905_960_720.jpg',
+  5.5,
+  'High in Vitamin E'
+);
 
-     new Products(
-      'Grapefruit',
-      'img/white-and-brown-flying-bird-wallpaper-preview.jpg',
-      2.99,
-      'Grapefruit is low in calories and also provides a significant amount of fiber, vitamins, minerals'
-     );
+new Products(
+  'Avocado',
+  'img/avocado-cut-stone-leaves-white-background-wallpaper-preview.jpg',
+  4.99,
+  'Avocado is a green, pear-shaped fruit often called an “alligator pear.” It is loaded with healthy fats'
+);
 
+new Products(
+  'Grapefruit',
+  'img/white-and-brown-flying-bird-wallpaper-preview.jpg',
+  2.99,
+  'Grapefruit is low in calories and also provides a significant amount of fiber, vitamins, minerals'
+);
 
 let parent2 = document.getElementById('parent');
 let ulElement = document.createElement('ul');
@@ -184,7 +181,7 @@ function AddToCart(link, name, price, description) {
   this.name = name;
   this.price = price;
   this.description = description;
-  this.quantity=1;
+  this.quantity = 1;
   addToCartArr.push(this);
 }
 let sup = document.getElementById('cart-number');
@@ -218,7 +215,7 @@ function getCartStorage() {
         cartData[i].description
       );
     }
-    
+
     sup.textContent = addToCartArr.length;
   }
 }
