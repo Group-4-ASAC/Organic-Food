@@ -1,7 +1,7 @@
 'use strict';
 
 let allProducts = [];
-
+let addToCartArr = [];
 function Products(name, link, price, description) {
   this.name = name;
   this.link = link;
@@ -163,7 +163,7 @@ function getDataStorage() {
   }
 }
 getDataStorage();
-let addToCartArr = [];
+
 function AddToCart(link, name, price, description) {
   this.link = link;
   this.name = name;
