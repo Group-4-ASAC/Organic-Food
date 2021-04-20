@@ -30,7 +30,7 @@ table tr {
   display: flex;
   flex-direction: row;
 }
-img {
+td img {
   border-radius: 10px;
   height: 100px;
   width: 150px;
@@ -46,7 +46,7 @@ table th {
 }
 table tr {
   border-radius: 20px;
-  background-color: #e97878;
+  background-color: #f8dfdf;
   margin-top: 20px;
   /* margin-bottom: ; */
 }

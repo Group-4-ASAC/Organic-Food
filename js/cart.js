@@ -4,7 +4,7 @@
 let table = document.getElementById('table');
 let addedToCart = [];
 let totalOfTotals = 0;
-let tableHead = ['Image', 'Product', 'price', 'quantity'];
+let tableHead = ['Image', 'Product', 'Price', 'Quantity'];
 let trElement = document.createElement('tr');
 let allTotals = document.getElementById('totalsing');
 table.appendChild(trElement);
@@ -191,7 +191,7 @@ function addToQuantity(event) {
 let clearingButton = document.getElementById('clearing-button');
 clearingButton.addEventListener('click', clears);
 function clears() {
-  localStorage.clear('userCart');
+  localStorage.removeItem('userCart');
   getAdded();
   allTotals.textContent = 0;
   let cartNumber = document.getElementById('cart-number');
