@@ -21,7 +21,8 @@ function getAdded() {
       new Cart(
         addedProducts[i].name,
         addedProducts[i].link,
-        addedProducts[i].price
+        addedProducts[i].price,
+        addedProducts[i].quantity,
       );
       // addedToCart[i].render();
     }
@@ -29,11 +30,11 @@ function getAdded() {
 }
 getAdded();
 
-function Cart(name, link, price) {
+function Cart(name, link, price,quantity) {
   this.name = name;
   this.link = link;
   this.price = Number(price);
-  this.quantity = 1;
+  this.quantity = quantity;
   this.totalPrice = this.quantity * this.price;
   totalOfTotals += this.totalPrice;
   addedToCart.push(this);
@@ -68,7 +69,7 @@ Cart.prototype.render = function () {
   formElment.appendChild(inputSub);
   formElment.addEventListener('submit', addToQuantity);
 
-  inputElment.value = 1;
+  inputElment.value = this.quantity;
 };
 
 Cart.prototype.quantity = function () {
@@ -94,6 +95,8 @@ function addToQuantity(event) {
   }
   allTotals.textContent = totalOfTotals;
 console.log(totalOfTotals);
+localStorage.setItem('userCart',JSON.stringify(addedToCart));
+
   // for (let i = 0; i < addedToCart.length; i++) {
   //   new Cart(
   //     addedToCart[i].name,
@@ -116,3 +119,4 @@ function clears()
 }
 
 allTotals.textContent = totalOfTotals;
+
