@@ -1,4 +1,3 @@
-
 let index = document.getElementById('index-header');
 let products = document.getElementById('products-header');
 let aboutUs = document.getElementById('about-us-header');
@@ -21,10 +20,7 @@ if (window.location.pathname === '/about-us.html') {
   index.classList.remove('active-page');
   aboutUs.classList.remove('active-page');
   addProducts.classList.remove('active-page');
-
-}
-else if(window.location.pathname==='/form.html')
-{
+} else if (window.location.pathname === '/form.html') {
   products.classList.remove('active-page');
   index.classList.remove('active-page');
   aboutUs.classList.remove('active-page');
