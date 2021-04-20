@@ -21,7 +21,8 @@ function getAdded() {
       new Cart(
         addedProducts[i].name,
         addedProducts[i].link,
-        addedProducts[i].price
+        addedProducts[i].price,
+        addedProducts[i].quantity
       );
       // addedToCart[i].render();
     }
@@ -29,11 +30,11 @@ function getAdded() {
 }
 getAdded();
 
-function Cart(name, link, price) {
+function Cart(name, link, price, quantity) {
   this.name = name;
   this.link = link;
   this.price = Number(price);
-  this.quantity = 1;
+  this.quantity = quantity;
   this.totalPrice = this.quantity * this.price;
   totalOfTotals += this.totalPrice;
   addedToCart.push(this);
@@ -96,22 +97,21 @@ Cart.prototype.render = function () {
   //to make the id of the form as the NAME object that is in the constructor
   formElment.id = this.name;
 
-  //to make the variable 'inputSub' used as input 
+  //to make the variable 'inputSub' used as input
   let inputSub = document.createElement('input');
   //to make the type of the variable submit
   inputSub.type = 'submit';
 
   //to add the the inputElment's number and quantity to the table
   formElment.appendChild(inputElment);
-  
+
   //to add the submit to the table
   formElment.appendChild(inputSub);
 
   //to make an event on submit with the function name of addToQuantity
   formElment.addEventListener('submit', addToQuantity);
-
   //initial value of the quantity
-  inputElment.value = 1;
+  inputElment.value = this.quantity;
 };
 
 Cart.prototype.quantity = function () {
@@ -122,7 +122,6 @@ for (let i = 0; i < addedToCart.length; i++) {
   addedToCart[i].render();
 }
 
-
 function addToQuantity(event) {
   event.preventDefault();
   console.log(event.target.quantity.value);
@@ -130,51 +129,49 @@ function addToQuantity(event) {
   //to make the text content with no values
   table.textContent = '';
 
-  totalOfTotals=0;
+  totalOfTotals = 0;
   //to loop all over the array
   for (let i = 0; i < addedToCart.length; i++) {
-    
     //to check if the name of each element equals to its ID data type and value
     if (addedToCart[i].name === event.target.id) {
-
       console.log(event.target.firstChild.value);
 
       //to assign the quantity of each index as the value that is entered
       addedToCart[i].quantity = Number(event.target.firstChild.value);
 
       //to make totalPrice of each index equals to the multiplication of the its quantity(how many you choose) and its original price
-      addedToCart[i].totalPrice = addedToCart[i].quantity* addedToCart[i].price;
+      addedToCart[i].totalPrice =
+        addedToCart[i].quantity * addedToCart[i].price;
     }
-    
+
     //to sum the total of total price
-    totalOfTotals+=addedToCart[i].totalPrice;
-    
+    totalOfTotals += addedToCart[i].totalPrice;
   }
   //to add the last total in allTotals variable
   allTotals.textContent = totalOfTotals;
-console.log(totalOfTotals);
+  console.log(totalOfTotals);
+  localStorage.setItem('userCart', JSON.stringify(addedToCart));
+
   // for (let i = 0; i < addedToCart.length; i++) {
   //   new Cart(
   //     addedToCart[i].name,
   //     addedToCart[i].link,
   //     addedToCart[i].price
   //     );
-      // addedToCart[i].render();
- //   }
+  // addedToCart[i].render();
+  //   }
 
-    //to loop through the whole array and use render function in each index
-    for (let i = 0; i < addedToCart.length; i++) {
-      addedToCart[i].render();
-    }
+  //to loop through the whole array and use render function in each index
+  for (let i = 0; i < addedToCart.length; i++) {
+    addedToCart[i].render();
+  }
   console.log(addedToCart);
-
 }
 
 //to clear the page after pressing the CLEAR button
-let clearingButton = document.getElementById("clearing-button");
-clearingButton.addEventListener("click",clears);
-function clears()
-{
+let clearingButton = document.getElementById('clearing-button');
+clearingButton.addEventListener('click', clears);
+function clears() {
   localStorage.clear('userCart');
 }
 

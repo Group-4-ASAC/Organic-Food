@@ -10,7 +10,10 @@ if (window.location.pathname === '/about-us.html') {
   products.classList.remove('active-page');
   index.classList.remove('active-page');
   addProducts.classList.remove('active-page');
-} else if (window.location.pathname === '/index.html') {
+} else if (
+  window.location.pathname === '/index.html' ||
+  window.location.pathname === '/'
+) {
   index.classList.add('active-page');
   products.classList.remove('active-page');
   aboutUs.classList.remove('active-page');
@@ -26,3 +29,7 @@ if (window.location.pathname === '/about-us.html') {
   aboutUs.classList.remove('active-page');
   addProducts.classList.add('active-page');
 }
+let cartNumber = localStorage.getItem('userCart');
+cartNumber = JSON.parse(cartNumber);
+let sub = document.getElementById('cart-number');
+sub.textContent = cartNumber.length;
