@@ -44,6 +44,7 @@ main li h4{
 }
 main li p{
     line-height: 1.5;
+    text-align: justify;
 }
 button{
     border-radius: 10px;
