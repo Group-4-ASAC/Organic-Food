@@ -12,7 +12,7 @@ if (window.location.pathname === '/Organic-Food/about-us.html') {
   addProducts.classList.remove('active-page');
 } else if (
   window.location.pathname === '/Organic-Food/index.html' ||
-  window.location.pathname === '/Organic-Food'
+  window.location.pathname === '/Organic-Food/'
 ) {
   index.classList.add('active-page');
   products.classList.remove('active-page');
