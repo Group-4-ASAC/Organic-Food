@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    
+}
+
+main ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main li {
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    margin: 30px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    line-height: 2;
+}
+
+main li h4::after{
+    content: ' JOD';
+}

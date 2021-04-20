@@ -33,5 +33,5 @@ else if(window.location.pathname==='/form.html')
 }
 let cartNumber=localStorage.getItem('userCart');
 cartNumber=JSON.parse(cartNumber);
-let sup = document.getElementById('cart-number');
-sup.textContent = cartNumber.length;
+let headerCart = document.getElementById('cart-number');
+headerCart.textContent = cartNumber.length;
