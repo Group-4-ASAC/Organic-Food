@@ -29,7 +29,13 @@ function submitter(event) {
     //     console.log('helko');
     // }
     dataStorage();
-    alert('Great, Your product is added.')
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Great, Your product has been added.',
+        showConfirmButton: false,
+        timer: 1500
+      })
 
 }
 function dataStorage() {
