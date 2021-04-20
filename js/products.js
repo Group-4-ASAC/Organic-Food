@@ -88,6 +88,21 @@ new Products(
      'High in Vitamin E'
      );
 
+     new Products(
+       'Avocado',
+      'img/avocado-cut-stone-leaves-white-background-wallpaper-preview.jpg',
+      4.99,
+      'Avocado is a green, pear-shaped fruit often called an “alligator pear.” It is loaded with healthy fats'
+      
+     );
+
+     new Products(
+      'Grapefruit',
+      'img/white-and-brown-flying-bird-wallpaper-preview.jpg',
+      2.99,
+      'Grapefruit is low in calories and also provides a significant amount of fiber, vitamins, minerals'
+     );
+
 
 let parent2 = document.getElementById('parent');
 let ulElement = document.createElement('ul');
