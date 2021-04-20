@@ -38,6 +38,10 @@
 #hero-image label{
     font-size: 20px;
     font-weight: bold;
+    width: 150px;
+    display: inline-block;
+    font-family: 'Lato',sans-serif;
+
 }
 
 #hero-image #button{
@@ -50,13 +54,14 @@
   height: 50px;
   cursor: pointer;
   background-color: transparent;
-  color: #e65059;
+  color: #480731;
   font-size: 20px;
-  border: solid 2px #e65059;
+  border: solid 2px #480731;
   transition: all 0.3s ease;
 }
 
 #hero-image #button:hover {
-    background-color: #e65059;
+    background-color: #480731;
     color: white;
   }
+  
