@@ -88,22 +88,17 @@ new Products(
 );
 
 new Products(
-  'coconut oil',
-  'https://cdn.pixabay.com/photo/2018/01/05/04/44/food-3062139_960_720.jpg',
-  6.5,
-  'Contains healthy fatty acids'
+  'Avocado',
+  'img/avocado-cut-stone-leaves-white-background-wallpaper-preview.jpg',
+  4.99,
+  'Avocado is a green, pear-shaped fruit often called an “alligator pear.” It is loaded with healthy fats'
 );
+
 new Products(
-  'organic eggs',
-  'https://cdn.pixabay.com/photo/2018/03/11/18/34/brown-eggs-3217675_960_720.jpg',
-  3.5,
-  ' Organic eggs have higher levels of omega-3 fatty acids than non-organic eggs. '
-);
-new Products(
-  'Almond milk',
-  'https://cdn.pixabay.com/photo/2020/06/19/06/41/almond-5315905_960_720.jpg',
-  5.5,
-  'High in Vitamin E'
+  'Grapefruit',
+  'img/white-and-brown-flying-bird-wallpaper-preview.jpg',
+  2.99,
+  'Grapefruit is low in calories and also provides a significant amount of fiber, vitamins, minerals'
 );
 
 let parent2 = document.getElementById('parent');

@@ -261,3 +261,32 @@ footer li {
 footer div {
   height: 250px;
 }
+
+
+
+/* css */
+
+#recipeheader h3{
+  font-size: 60px;
+  color: #480731;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+
+}
+
+#recipeheader p{
+  color: #480731;
+  font-weight: bold;
+  text-align:justify;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  height: 50px;
+  align-items: center;
+
+}
+
+#secondBanner p{
+  color: #480731;
+}
