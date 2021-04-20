@@ -129,6 +129,16 @@ function addToQuantity(event) {
 
   //to make the text content with no values
   table.textContent = '';
+  let trElement = document.createElement('tr');
+table.appendChild(trElement);
+  //render the header again
+  for (let i = 0; i < tableHead.length; i++) {
+    let thElement = document.createElement('th');
+    trElement.appendChild(thElement);
+    thElement.textContent = tableHead[i];
+  }
+
+  
 
   totalOfTotals=0;
   //to loop all over the array
