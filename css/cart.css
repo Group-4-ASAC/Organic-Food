@@ -1,4 +1,94 @@
-table ,tr,  th, td {
-    border: solid 1px #333 ;
-    border-collapse: collapse;
+*
+{
+    box-sizing: border-box;
+   padding: 20px; 
+}
+
+table , th, td {
+    
+    border-collapse: separate;     
+}
+table td ,tr
+{
+    padding: 10px; 
+    border-radius: 0%;
+    
+}
+
+table td
+ {
+     align-items: center;
+    display: flex; 
+    width: 200px;
+    text-align: center;
+    font-family: Monospace	;
+    font-size: 17px;
+    
+    
+    /* line-height: 5px;
+    vertical-align: center;
+} */
+ }
+table tr
+{
+    display: flex ;
+    flex-direction: row;
+}
+img
+{
+    border-radius: 10px;
+    height: 100px;
+    width: 150px;
+
+}
+table th
+{
+    width: 200px;
+    background-color:#480731;
+    color: white;
+    text-align: center;
+    display: flex;
+    font-size: 24px;
+    
+}
+table tr
+{
+    border-radius: 20px;
+    background-color: #E97878;
+    margin-top: 20px;
+    /* margin-bottom: ; */  
+}
+table tr:first-child  
+{
+    background-color: #480731;
+}
+input[type=number]
+{
+    width: 75px;
+}
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+   display: block;
+   width: 900px;
+   
+   
+}
+input[type=submit]
+{
+    background-color: #480731;
+    color: white;
+    border: none;
+    font-size: 14.7px;
+}
+#clearing-button
+{
+   position: absolute;
+   
+    background-color:#480731 ;
+    color: whitesmoke;
 }

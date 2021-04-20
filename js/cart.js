@@ -104,7 +104,6 @@ Cart.prototype.render = function () {
 
   //to add the the inputElment's number and quantity to the table
   formElment.appendChild(inputElment);
-
   //to add the submit to the table
   formElment.appendChild(inputSub);
 
@@ -128,6 +127,14 @@ function addToQuantity(event) {
 
   //to make the text content with no values
   table.textContent = '';
+  let trElement = document.createElement('tr');
+  table.appendChild(trElement);
+  //render the header again
+  for (let i = 0; i < tableHead.length; i++) {
+    let thElement = document.createElement('th');
+    trElement.appendChild(thElement);
+    thElement.textContent = tableHead[i];
+  }
 
   totalOfTotals = 0;
   //to loop all over the array

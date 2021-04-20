@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    
+}
+
+main ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main li {
+    width: 300px;
+    height: 450px;
+    background-color: white;
+    margin: 30px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    line-height: 2;
+    font-family: 'Lato',sans-serif;
+    position: relative;
+
+}
+
+main li h4::after{
+    content: ' JOD';
+}
+main li h2{
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+main li h4{
+    font-weight: bold;
+    font-style:italic ;
+    
+}
+main li p{
+    line-height: 1.5;
+    text-align: justify;
+}
+button{
+    border-radius: 10px;
+    margin: 0 auto;
+    /* padding: 2px 30px; */
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #e65059;
+    font-size: 14px;
+    border: solid 2px #e65059;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    outline: none;
+
+}
+button:hover {
+    background-color: #e65059;
+    color: white;
+  }
+  
+
