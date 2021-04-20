@@ -1,145 +1,194 @@
-// // "use strict";
+'use strict';
 
-// // let addedToCart = [];
+// alert('hello');
+let table = document.getElementById('table');
+let addedToCart = [];
+let totalOfTotals = 0;
+let tableHead = ['Image', 'Product', 'price', 'quantity'];
+let trElement = document.createElement('tr');
+let allTotals = document.getElementById('totalsing');
+table.appendChild(trElement);
+for (let i = 0; i < tableHead.length; i++) {
+  let thElement = document.createElement('th');
+  trElement.appendChild(thElement);
+  thElement.textContent = tableHead[i];
+}
+function getAdded() {
+  let added = localStorage.getItem('userCart');
+  let addedProducts = JSON.parse(added);
+  if (addedProducts !== null) {
+    for (let i = 0; i < addedProducts.length; i++) {
+      new Cart(
+        addedProducts[i].name,
+        addedProducts[i].link,
+        addedProducts[i].price,
+        addedProducts[i].quantity,
+      );
+      // addedToCart[i].render();
+    }
+  }
+}
+getAdded();
 
-// let addedToCart = [];
+function Cart(name, link, price,quantity) {
+  this.name = name;
+  this.link = link;
+  this.price = Number(price);
+  this.quantity = quantity;
+  this.totalPrice = this.quantity * this.price;
+  totalOfTotals += this.totalPrice;
+  addedToCart.push(this);
+}
 
-// // let totalPrice = 0;
-// // let totalCount = 0;
+Cart.prototype.render = function () {
+  //creating a row
+  let tr = document.createElement('tr');
+  //appending that row
+  table.appendChild(tr);
 
-// // let divElement = document.getElementById('parent');
+  //creating first table data (will be an image)
+  let imagTd = document.createElement('td');
+  // adding that img in the table data
+  tr.appendChild(imagTd);
 
-// // function getAdded() {
-// //   let added = localStorage.getItem('userCart');
-// //   let addedProducts = JSON.parse(added);
-// //   if (addedProducts !== null) {
+  //for creating an image
+  let imagTg = document.createElement('img');
+  //for adding that image to the table data
+  imagTd.appendChild(imagTg);
 
-// //     addedToCart = addedProducts;
-// //   }
-// // }
-// // getAdded();
+  //creating a table data for the name of the product
+  let nameTd = document.createElement('td');
+  //adding that name to the table
+  tr.appendChild(nameTd);
 
-// // console.log(addedToCart);
+  //creating a table data for the price of the product
+  let priceTd = document.createElement('td');
+  //adding that price to the table
+  tr.appendChild(priceTd);
 
-// // for (let j = 0; j < addedToCart.length; j++) {
+  //creating a table data for the quantity of the product
+  let quantityTd = document.createElement('td');
+  //adding that quantity to the table
+  tr.appendChild(quantityTd);
 
-// //   let parent = document.getElementById("formCart");
-// //   let labelElement = document.createElement('label');
-// //   labelElement.textContent = 'Quantity :';
-// //   labelElement.for = 'userAdded';
-// //   parent.appendChild(labelElement);
-// //   let inputElement = document.createElement('input');
-// //   inputElement.type = 'number';
-// //   inputElement.id = 'userAdded';
-// //   inputElement.name = 'userAdded';
-// //   parent.appendChild(inputElement);
-// //   let submitInput = document.createElement('input');
-// //   submitInput.type = 'submit';
-// //   parent.appendChild(submitInput);
+  //to get the link from the constructor and adding it to the imgagTg source
+  imagTg.src = this.link;
 
-// //   formCart.addEventListener("submit", quntitiySub);
+  //to get the name of the product from the constructor and adding it in the table data
+  nameTd.textContent = this.name;
 
-// //   // renderAddedtoCart();
-// // }
+  //to get the price of the product from the constructor and adding it in table
+  priceTd.textContent = this.totalPrice;
 
-//   let parent = document.getElementById("formCart");
-//   let labelElement = document.createElement('label');
-//   labelElement.textContent = ` ${addedToCart[j].name }Quantity :`;
-//   labelElement.for = 'userAdded';
-//   parent.appendChild(labelElement);
-//   let inputElement = document.createElement('input');
-//   inputElement.type = 'number';
-//   inputElement.id = 'userAdded';
-//   inputElement.name = 'userAdded';
-//   parent.appendChild(inputElement);
-//   let submitInput = document.createElement('input');
-//   submitInput.type = 'submit';
-//   parent.appendChild(submitInput);
+  //to create a form
+  let formElment = document.createElement('form');
+  //to add that form to the table
+  quantityTd.appendChild(formElment);
 
-//   parent.addEventListener("submit", quntitiySub);
+  // to make the inputElment variable as the input of the field
+  let inputElment = document.createElement('input');
 
-// }
+  //to make the type of the input a 'number'
+  inputElment.type = 'number';
 
-// let unorder = document.createElement('ul');
-// let liunorder2 = document.createElement('li');
+  //to make the name of the input 'quantity'
+  inputElment.name = 'quantity';
 
-// // function quntitiySub(event) {
-// //   event.preventDefault();
-// //   let quntityProduct = event.target.userAdded.value;
-// //   // console.log(quntityProduct);
-// //   for (let i = 0; i < addedToCart.length; i++) {
+  //to make the id of the form as the NAME object that is in the constructor
+  formElment.id = this.name;
 
-// //     totalCount = 0;
-// //     totalCount = totalCount + quntityProduct;
-// //     totalPrice += addedToCart[i].price * quntityProduct;
-// //     console.log(totalCount);
-// //     console.log(totalPrice);
+  //to make the variable 'inputSub' used as input 
+  let inputSub = document.createElement('input');
+  //to make the type of the variable submit
+  inputSub.type = 'submit';
 
-// //     localStorage.setItem('totalprice', totalPrice);
+  //to add the the inputElment's number and quantity to the table
+  formElment.appendChild(inputElment);
+  
+  //to add the submit to the table
+  formElment.appendChild(inputSub);
 
-// function quntitiySub(event) {
-//   event.preventDefault();
-//   let quntityProduct = event.target.userAdded.value;
-//   console.log(event.target.userAdded.value);
-//   // if (quntityProduct) {
-//   //   quntityProduct=1
-//     // console.log(quntityProduct);
-//   // }else{
-//   //   quntityProduct = event.target.userAdded.value;
-//   // }
-//   for (let i = 0; i < addedToCart.length; i++) {
+  //to make an event on submit with the function name of addToQuantity
+  formElment.addEventListener('submit', addToQuantity);
+ //initial value of the quantity
+  inputElment.value = this.quantity;
+};
 
-//     // totalCount = 0;
-//     totalCount = totalCount + quntityProduct;
-//     // console.log(totalCount);
+Cart.prototype.quantity = function () {
+  this;
+};
+//to use render function on all elements in the addedToCart array
+for (let i = 0; i < addedToCart.length; i++) {
+  addedToCart[i].render();
+}
 
-//     // localStorage.setItem('totalprice', totalPrice);
 
-//     console.log(totalCount);
+function addToQuantity(event) {
+  event.preventDefault();
+  console.log(event.target.quantity.value);
 
-//     totalPrice = totalPrice+(addedToCart[i].price * quntityProduct);
-//   }
+  //to make the text content with no values
+  table.textContent = '';
+  let trElement = document.createElement('tr');
+table.appendChild(trElement);
+  //render the header again
+  for (let i = 0; i < tableHead.length; i++) {
+    let thElement = document.createElement('th');
+    trElement.appendChild(thElement);
+    thElement.textContent = tableHead[i];
+  }
 
-//   console.log(totalPrice);
+  
 
-// //   }
+  totalOfTotals=0;
+  //to loop all over the array
+  for (let i = 0; i < addedToCart.length; i++) {
+    
+    //to check if the name of each element equals to its ID data type and value
+    if (addedToCart[i].name === event.target.id) {
 
-//   liunorder2.textContent = `Item's Total Price: ${totalPrice}`;
+      console.log(event.target.firstChild.value);
 
-// // }
+      //to assign the quantity of each index as the value that is entered
+      addedToCart[i].quantity = Number(event.target.firstChild.value);
 
-// // let liunorder2 = document.createElement('li');
+      //to make totalPrice of each index equals to the multiplication of the its quantity(how many you choose) and its original price
+      addedToCart[i].totalPrice = addedToCart[i].quantity* addedToCart[i].price;
+    }
+    
+    //to sum the total of total price
+    totalOfTotals+=addedToCart[i].totalPrice;
+    
+  }
+  //to add the last total in allTotals variable
+  allTotals.textContent = totalOfTotals;
+console.log(totalOfTotals);
+localStorage.setItem('userCart',JSON.stringify(addedToCart));
 
-// // function renderAddedtoCart() {
+  // for (let i = 0; i < addedToCart.length; i++) {
+  //   new Cart(
+  //     addedToCart[i].name,
+  //     addedToCart[i].link,
+  //     addedToCart[i].price
+  //     );
+      // addedToCart[i].render();
+ //   }
 
-// //   let unorder = document.createElement('ul');
+    //to loop through the whole array and use render function in each index
+    for (let i = 0; i < addedToCart.length; i++) {
+      addedToCart[i].render();
+    }
+  console.log(addedToCart);
 
-// //   divElement.appendChild(unorder);
+}
 
-// //   for (let i = 0; i < addedToCart.length; i++) {
+//to clear the page after pressing the CLEAR button
+let clearingButton = document.getElementById("clearing-button");
+clearingButton.addEventListener("click",clears);
+function clears()
+{
+  localStorage.clear('userCart');
+}
 
-// //     let liunorder = document.createElement('li');
+allTotals.textContent = totalOfTotals;
 
-// //     unorder.appendChild(liunorder);
-
-// //     liunorder.textContent = `${addedToCart[i].name}And Item Price ${addedToCart[i].price}`;
-
-// //     let imgElement = document.createElement('img');
-// //     liunorder.appendChild(imgElement);
-// //     imgElement.src = addedToCart[i].link;
-
-// //     unorder.appendChild(liunorder2);
-// //     liunorder2.textConten = `Item's Total Price: ${totalPrice}`;
-
-//     unorder.appendChild(liunorder2);
-//     liunorder2.textContent = `Item's Total Price: ${totalPrice || 1 * addedToCart[i].price}`;
-
-// //   }
-
-//
-// // }
-// // renderAddedtoCart();
-// // // renderAddedtoCart();
-//
-// }
-// renderAddedtoCart();
