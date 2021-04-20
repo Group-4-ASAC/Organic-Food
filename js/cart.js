@@ -26,6 +26,22 @@ function getAdded() {
       );
       // addedToCart[i].render();
     }
+  } else {
+    table.remove();
+    let empty = document.getElementById('empty');
+    empty.textContent =
+      'The Cart is empty, You can add products to the cart from the Product Page.';
+
+    Swal.fire({
+      title: '<strong>Empty Cart</strong>',
+      icon: 'info',
+      html:
+        'The Cart is empty, You can add products to the cart from the ' +
+        '<a href="../products.html">Product Page.</a>',
+      showCloseButton: true,
+      confirmButtonText: 'OK',
+      confirmButtonAriaLabel: 'OK',
+    });
   }
 }
 getAdded();
@@ -104,7 +120,6 @@ Cart.prototype.render = function () {
 
   //to add the the inputElment's number and quantity to the table
   formElment.appendChild(inputElment);
-
   //to add the submit to the table
   formElment.appendChild(inputSub);
 
@@ -114,9 +129,9 @@ Cart.prototype.render = function () {
   inputElment.value = this.quantity;
 };
 
-Cart.prototype.quantity = function () {
-  this;
-};
+// Cart.prototype.quantity = function () {
+//   this;
+// };
 //to use render function on all elements in the addedToCart array
 for (let i = 0; i < addedToCart.length; i++) {
   addedToCart[i].render();
@@ -124,18 +139,23 @@ for (let i = 0; i < addedToCart.length; i++) {
 
 function addToQuantity(event) {
   event.preventDefault();
-  console.log(event.target.quantity.value);
 
   //to make the text content with no values
   table.textContent = '';
+  let trElement = document.createElement('tr');
+  table.appendChild(trElement);
+  //render the header again
+  for (let i = 0; i < tableHead.length; i++) {
+    let thElement = document.createElement('th');
+    trElement.appendChild(thElement);
+    thElement.textContent = tableHead[i];
+  }
 
   totalOfTotals = 0;
   //to loop all over the array
   for (let i = 0; i < addedToCart.length; i++) {
     //to check if the name of each element equals to its ID data type and value
     if (addedToCart[i].name === event.target.id) {
-      console.log(event.target.firstChild.value);
-
       //to assign the quantity of each index as the value that is entered
       addedToCart[i].quantity = Number(event.target.firstChild.value);
 
@@ -149,7 +169,7 @@ function addToQuantity(event) {
   }
   //to add the last total in allTotals variable
   allTotals.textContent = totalOfTotals;
-  console.log(totalOfTotals);
+
   localStorage.setItem('userCart', JSON.stringify(addedToCart));
 
   // for (let i = 0; i < addedToCart.length; i++) {
@@ -165,7 +185,6 @@ function addToQuantity(event) {
   for (let i = 0; i < addedToCart.length; i++) {
     addedToCart[i].render();
   }
-  console.log(addedToCart);
 }
 
 //to clear the page after pressing the CLEAR button
@@ -173,6 +192,17 @@ let clearingButton = document.getElementById('clearing-button');
 clearingButton.addEventListener('click', clears);
 function clears() {
   localStorage.clear('userCart');
+  getAdded();
+  allTotals.textContent = 0;
+  let cartNumber = document.getElementById('cart-number');
+  cartNumber.textContent = '';
+  Swal.fire({
+    title: '<strong>Thank you for visiting our website.</strong>',
+    icon: 'success',
+    showCloseButton: true,
+    confirmButtonText: 'OK',
+    confirmButtonAriaLabel: 'OK',
+  });
 }
 
 allTotals.textContent = totalOfTotals;

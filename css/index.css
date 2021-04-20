@@ -16,6 +16,12 @@ header {
 
   z-index: 2;
 }
+#cart-number {
+  position: relative;
+  font-size: 18px;
+  bottom: 18px;
+  right: -2px;
+}
 header h1 {
   font-size: 40px;
   color: #480731;

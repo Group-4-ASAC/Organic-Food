@@ -30,6 +30,6 @@ if (window.location.pathname === '/about-us.html') {
   addProducts.classList.add('active-page');
 }
 let cartNumber = localStorage.getItem('userCart');
-cartNumber = JSON.parse(cartNumber);
-let sub = document.getElementById('cart-number');
-sub.textContent = cartNumber.length;
+cartNumber = JSON.parse(cartNumber) || [];
+let headerCart = document.getElementById('cart-number');
+headerCart.textContent = cartNumber.length;

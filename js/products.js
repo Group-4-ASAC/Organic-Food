@@ -14,28 +14,28 @@ function Products(name, link, price, description) {
 
 //instances
 new Products(
-  'apple',
-  'https://cdn.pixabay.com/photo/2017/09/26/13/21/apple-2788599__340.jpg',
-  12,
-  'vitminC'
+  'Apple',
+  'https:images.unsplash.com/photo-1589217157232-464b505b197f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+  4,
+  'Apples contain compounds that may help protect your stomach lining from injury due to NSAID painkillers.'
 );
 
 new Products(
-  'cherry',
+  'Cherry',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxv4U_3l1CBP8hNnA4bGW9RYYfWv_w96nNx5v3dXQCMX65EpEH1siE_BGTq2qsFsc48wY&usqp=CAU',
-  14,
+  11,
   'Rich in antioxidants and anti-inflammatory compounds'
 );
 
 new Products(
-  'strawberries',
+  'Strawberries',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbXxACrMh6M1WdAWGafGW3Gh7LF-yI2PwHA&usqp=CAU',
   9,
   'Packed with vitamins, fiber, and particularly high levels of antioxidants'
 );
 
 new Products(
-  'tomatoes',
+  'Tomatoes',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0fqOgYnXJJvThlurHhzx6VipJY-Kt_ttWw&usqp=CAU',
   2.6,
   'great source of vitamin C, potassium, folate, and vitamin K'
@@ -57,15 +57,34 @@ new Products(
 new Products(
   'Dragon fruit',
   'https://cdn.pixabay.com/photo/2017/07/06/10/01/fruit-2477515_960_720.jpg',
-  6,
+  15,
   'Its rich in antioxidants like flavonoids, phenolic acid'
 );
 
 new Products(
   'Coconut',
   'https://cdn.pixabay.com/photo/2017/08/24/06/29/coconut-2675546_960_720.jpg',
-  2.5,
+  10,
   'Rich in fiber and MCTs, it may offer a number of benefits, including improved heart health'
+);
+
+new Products(
+  'Coconut Oil',
+  'https://cdn.pixabay.com/photo/2018/01/05/04/44/food-3062139_960_720.jpg',
+  6.5,
+  'Contains healthy fatty acids'
+);
+new Products(
+  'Organic Eggs',
+  'https://cdn.pixabay.com/photo/2018/03/11/18/34/brown-eggs-3217675_960_720.jpg',
+  3.5,
+  ' Organic eggs have higher levels of omega-3 fatty acids than non-organic eggs. '
+);
+new Products(
+  'Almond milk',
+  'https://cdn.pixabay.com/photo/2020/06/19/06/41/almond-5315905_960_720.jpg',
+  5.5,
+  'High in Vitamin E'
 );
 
 new Products(
@@ -100,7 +119,7 @@ Products.prototype.render = function () {
 
   let imgElemnt = document.createElement('img');
   let nameElement = document.createElement('h2');
-  let priceElement = document.createElement('p');
+  let priceElement = document.createElement('h4');
   let descElement = document.createElement('p');
   let button = document.createElement('button');
 

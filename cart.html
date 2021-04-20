@@ -66,10 +66,18 @@
     </header>
     <main>
       <table id="table"></table>
-
-      <div><button id="clearing-button">clear storage</button></div>
-
-      <div id="totalsing"></div>
+      <div id="empty"></div>
+      <div id="merging">
+        <div class="total-prices">
+          The Total Price is:
+          <span id="totalsing"></span>
+        </div>
+        <div>
+          <button id="clearing-button">
+            Checkout <i class="fas fa-cart-plus"> </i>
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -121,6 +129,7 @@
       </div>
     </footer>
   </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/cart.js"></script>
   <script src="js/header.js"></script>
 </html>
