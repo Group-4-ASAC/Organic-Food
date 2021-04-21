@@ -94,7 +94,7 @@ Cart.prototype.render = function () {
   nameTd.textContent = this.name;
 
   //to get the price of the product from the constructor and adding it in table
-  priceTd.textContent = this.totalPrice;
+  priceTd.textContent = this.totalPrice + ' JOD';
 
   //to create a form
   let formElment = document.createElement('form');
@@ -168,7 +168,7 @@ function addToQuantity(event) {
     totalOfTotals += addedToCart[i].totalPrice;
   }
   //to add the last total in allTotals variable
-  allTotals.textContent = totalOfTotals;
+  allTotals.textContent = totalOfTotals + ' JOD';
 
   localStorage.setItem('userCart', JSON.stringify(addedToCart));
 
@@ -205,4 +205,4 @@ function clears() {
   });
 }
 
-allTotals.textContent = totalOfTotals;
+allTotals.textContent = totalOfTotals + ' JOD';
