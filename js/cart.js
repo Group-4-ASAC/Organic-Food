@@ -106,7 +106,7 @@ Cart.prototype.render = function () {
 
   //to make the type of the input a 'number'
   inputElment.type = 'number';
-
+  inputElment.min = '1';
   //to make the name of the input 'quantity'
   inputElment.name = 'quantity';
 
