@@ -100,6 +100,9 @@ main {
   align-items: center;
   justify-content: center;
   margin-left: 100px;
+  background: #f8dfdf;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 #merging .total-prices {
